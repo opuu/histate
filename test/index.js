@@ -1,10 +1,10 @@
-import Histate from "../dist/histate.js";
+import Histate from "../dist/histate.min.js";
 
 let store = new Histate({
   name: "new-store",
   saveState: true,
   state: {
-    name: "User",
+    text: "Histate is Awesome!",
   },
   methods() {
     return {
@@ -17,14 +17,19 @@ let store = new Histate({
     };
   },
   watch() {
-    console.log(this.newData.text);
+    document.querySelector(
+      "#output"
+    ).innerHTML = `/* State changed */ \n${JSON.stringify(this, null, 2)}`;
   },
 });
 
-document.querySelector("input").value = store.methods.getText();
-document.querySelector(".output").innerHTML = store.methods.getText();
+document.querySelector("#text").value = store.methods.getText();
+document.querySelector("#output").innerHTML = `/* State */  \n${JSON.stringify(
+  store.state,
+  null,
+  2
+)}`;
 
-document.querySelector("input").addEventListener("input", function () {
+document.querySelector("#text").addEventListener("input", function () {
   store.methods.setText(this.value);
-  document.querySelector(".output").innerHTML = this.value;
 });

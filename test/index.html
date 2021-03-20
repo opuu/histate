@@ -5,10 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        color: #1d1d1d;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto 20vw;
+        padding: 50px 0px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .container {
+          margin: auto 20px;
+          padding: 20px 0px;
+        }
+      }
+
+      #text,
+      #output {
+        font-size: 18px;
+        box-sizing: border-box;
+        font-family: auto;
+        width: 100%;
+        height: auto;
+        border: 2px solid #1d1d1d;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+
+      #input:focus {
+        outline: 0;
+        border-radius: 0;
+      }
+
+      p {
+        margin: 10px 0;
+        line-height: 1.7;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
-    <input type="text" />
-    <div class="output"></div>
+    <div class="container">
+      <h1>Histate: History + State</h1>
+      <p>
+        Histate is a small easy to use state management library that can be used
+        in any JavaScript project to manage state across multiple tabs and to
+        remember the the last state of the app.
+      </p>
+      <h3>Input:</h3>
+      <input
+        id="text"
+        name="this-is-state"
+        autocomplete="false"
+        spellcheck="false"
+        placeholder="What you want to remember?"
+      />
+
+      <h3>State:</h3>
+      <textarea
+        id="output"
+        placeholder="I will remember it!"
+        disabled
+        rows="10"
+      ></textarea>
+    </div>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
