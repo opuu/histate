@@ -22,6 +22,9 @@ let store = new Histate({
 });
 
 document.querySelector("input").value = store.methods.getText();
+document.querySelector(".output").innerHTML = store.methods.getText();
+
 document.querySelector("input").addEventListener("input", function () {
   store.methods.setText(this.value);
+  document.querySelector(".output").innerHTML = this.value;
 });

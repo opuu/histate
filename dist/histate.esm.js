@@ -1,6 +1,13 @@
 /**
- * Easy State Management
+ * Histate: History + State
+ *
+ * A simple state management system that works on multiple tabs and can remember last state on next visit.
+ * @author opuu <info@broadbrander.com>
+ * @package Histate
+ * @version 1.0.0
+ * @license MIT
  */
+
 export default class Histate {
   /**
    * Create new store
@@ -14,8 +21,8 @@ export default class Histate {
   constructor(Obj) {
     this.saveState = Obj.saveState;
     this.name = Obj.name;
-    this.watch = Obj.watch;
-    this.methods = Obj.methods.call(this);
+    this.watch = Obj.watch ? Obj.watch : false;
+    this.methods = Obj.methods ? Obj.methods.call(this) : null;
 
     // if the store is not created yet create one and set default state
     if (this.state === null) {
@@ -39,23 +46,32 @@ export default class Histate {
    * @param {Object} state the state as an object
    */
   set state(state) {
+    // if input is not object show error
     if (typeof state !== "object") {
       console.error("State must be an object.");
     } else {
+      // new input
       let newObj = state;
+      // old state
       let oldState = this.state;
+      // new state
       let newState = { ...oldState, ...newObj };
+      // mutate the store
       if (this.saveState) {
         window.localStorage.setItem(this.name, JSON.stringify(newState));
       } else {
         window.sessionStorage.setItem(this.name, JSON.stringify(newState));
       }
+      // new value for `this` keyword in watcher
       let data = {
         oldState: oldState,
         newState: newState,
         newData: newObj,
       };
-      this.watch.call(data);
+      // call the watcher on every single change (if defined)
+      if (this.watch) {
+        this.watch.call(data);
+      }
     }
   }
 
