@@ -4,7 +4,7 @@
   "description": "State management library",
   "main": "src/index.js",
   "directories": {
-    "test": "test"
+    "dist": "dist"
   },
   "scripts": {
     "build": "gulp build && gulp compress && gulp es6"
@@ -16,7 +16,14 @@
   "keywords": [
     "state",
     "redux",
-    "vuex"
+    "vuex",
+    "ngrx",
+    "state-management",
+    "state-manager",
+    "history",
+    "localstorage",
+    "sessionstorage",
+    "db"
   ],
   "author": "Opuu",
   "license": "MIT",
