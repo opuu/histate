@@ -1,5 +1,5 @@
 {
-  "name": "histate",
+  "name": "@opuu/histate",
   "version": "1.0.0",
   "description": "State management library",
   "main": "src/index.js",
