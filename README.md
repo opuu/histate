@@ -1,10 +1,5 @@
 # Histate: History + State Management
 
-<!-- [![npm version](https://img.shields.io/npm/v/@broadbrander/ajaj.svg?style=flat-square)](https://www.npmjs.org/package/@broadbrander/ajaj)
-[![](https://data.jsdelivr.com/v1/package/npm/@broadbrander/ajaj/badge)](https://www.jsdelivr.com/package/npm/@broadbrander/ajaj)
-[![build status](https://img.shields.io/travis/broadbrander/ajaj/master.svg?style=flat-square)](https://travis-ci.org/broadbrander/ajaj)
-[![npm downloads](https://img.shields.io/npm/dm/@broadbrander/ajaj.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@broadbrander/ajaj) -->
-
 Histate is a small easy to use state management library that can be used in any JavaScript project to manage state across multiple tabs and to remember the the last state of the app.
 
 ## Installation
@@ -22,22 +17,6 @@ Import it in your project.
 ```js
 import Histate from "@opuu/histate";
 ```
-
-<!-- #### Using jsDelivr CDN:
-
-Add this script tag in your html document.
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@broadbrander/ajaj@0.2.1/dist/ajaj.min.js"></script>
-```
-
-#### Using unpkg CDN:
-
-Add this script tag in your html document.
-
-```html
-<script src="https://unpkg.com/@broadbrander/ajaj@0.2.1/dist/ajaj.min.js"></script>
-``` -->
 
 ## Usage
 

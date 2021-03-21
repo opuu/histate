@@ -1,8 +1,8 @@
 {
   "name": "@opuu/histate",
   "version": "1.0.0",
-  "description": "State management library",
-  "main": "src/index.js",
+  "description": "Histate is a small easy to use state management library that can be used in any JavaScript project to manage state across multiple tabs and to remember the the last state of the app.",
+  "main": "src/histate.js",
   "directories": {
     "dist": "dist"
   },
