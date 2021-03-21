@@ -20,7 +20,7 @@ $ npm install @opuu/histate
 Import it in your project.
 
 ```js
-import ajaj from "@opuu/histate";
+import Histate from "@opuu/histate";
 ```
 
 <!-- #### Using jsDelivr CDN:
